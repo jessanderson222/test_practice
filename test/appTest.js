@@ -6,6 +6,7 @@ const app = require("../app");
 //Results
 sayHelloResult = app.sayHello();
 addNumberResult = app.addNumbers(5, 5);
+nameResult = app.name("jane", "doe");
 
 describe("App", function() {
   describe("sayHello", function() {
@@ -29,6 +30,13 @@ describe("App", function() {
     it("addNumbers should return type number", function() {
       // let result = app.addNumbers(5, 5);
       assert.typeOf(addNumberResult, "number");
+    });
+  });
+
+  describe("name", function() {
+    // let result = app.name()
+    it("name should return the first and last name with space in between", function() {
+      assert.equal(nameResult, "jane doe");
     });
   });
 });
